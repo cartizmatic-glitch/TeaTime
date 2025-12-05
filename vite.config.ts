@@ -7,10 +7,12 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    
+    // Remove ALL uses of process.env — Vite does not support them!
     define: {
-      // No API key needed — leave empty
-      __API_KEY__: JSON.stringify('')
+      __API_KEY__: JSON.stringify('') // empty since you don't have one
     },
+
     server: {
       host: true
     }
